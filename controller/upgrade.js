@@ -1,7 +1,7 @@
 const Util = require('../common/Util')
 const AppBase = require('../common/Base')
 const UpgradeModel = require('./model/upgradeModel')
-const hardData = require('../common/hardData/HardItems')
+const hardData = require('../common/HardData/HardItems')
 class UpgradeController extends AppBase {
     #baseModel;
     constructor(req, res) {

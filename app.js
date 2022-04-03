@@ -10,4 +10,4 @@ app.all('/v1/items', (req, res) => {
 app.all('/v1/items/upgrade', (req, res) => {
     _ = new upgradeAPI(req, res)  
 })
-app.listen(80)
+app.listen(3000)

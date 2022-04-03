@@ -76,6 +76,13 @@ class HardItems {
             classType: this.jobClassType.allClass,
             itemName: "Wooden Armor(S)",
             levelRequirement: 1,
+        },
+        {
+            itemId: 9,
+            itemType: this.itemType.armorShoes,
+            classType: this.jobClassType.allClass,
+            itemName: "Platinum Armor(S)",
+            levelRequirement: 50,
         }
     ]
 }

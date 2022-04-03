@@ -39,12 +39,19 @@ class UpgradeController extends AppBase {
         const upgradedNumber = Number(this.#baseModel.request.currentUpgraded)
 
         /*
+            Only allowing upgrading system from 0 to 9
+            if current upgraded is not 0 to 9 then makeResponse with status "failed" and code 500
+            and message "UPGRADE NOT ALLOWED!"
+        */
+        if (upgradedNumber < 0 || upgradedNumber > 9)
+            super.makeResponse("Failed", 500, "Max upgrade is between 0 to 9!")
+        /*
             checking if upgradedNumber is known as integer if not then 
             it'll thrown as not number or unknown 
             so frontend can pass the correct parameter LOL
         */
-        if (!upgradedNumber) 
-            super.makeResponse("Failed", 500, "Current upgraded is unknown or its not number value!")
+        else if (!upgradedNumber) 
+            super.makeResponse("Failed", 500, "Query for currentUpgraded is not a number!")
         /*
             Checking if filtered item is available or not
             if not then will shown as item not found with code 500

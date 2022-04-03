@@ -39,7 +39,10 @@ class ItemsController extends AppBase {
                 // if the key is not found when filtering then it'll be ignored
                 case "type":
                     this.#baseModel.items = this.#baseModel.items.filter(
-                        item => item.itemType === this.#filterModel.type
+                        item => {
+                            console.log("Getting the item type " + item.itemType)
+                            return Number(item.itemType) === Number(this.#filterModel.type)
+                        }
                     )
                     break
 
